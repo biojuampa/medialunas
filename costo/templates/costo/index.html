@@ -1,0 +1,38 @@
+
+{% load static %}
+
+<html lang="es">
+    <head>
+        <title>Costo Medialunas de Manteca</title>
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}">
+    </head>
+
+    <body>
+        <br>
+        <h1 align="center" style="color: #558855">Costo Medialunas</h1>
+        <form action="calcular" method="POST">
+                    {% csrf_token %}
+            <table align="center" style="border-color: #55AA55; border-style: solid; border-width: 1px; border-radius: 10px; border-spacing: 5px;">
+                <tr>
+                    <th>Ingrediente</th>
+                    <th>Costo</th>
+                    <th>/</th>
+                    <th>Cantidad</th>
+                </tr>
+                {% for ingrediente in ingredientes %}
+                    <tr>
+                        <td>&nbsp;{{ ingrediente }}</td>
+                        <td><input type="text" name="costos" value="1" style="width: 100px; text-align: center;"></td>
+                        <td></td>
+                        <td><input type="text" name="cantidades" value="1" style="width: 100px; text-align: center;"></td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <br>
+            <div align="center">
+                <button type="submit" style="height: 60px; width: 200px; color: #558855; font-size: 18px; font-weight: bold; border-radius: 10px; border-width: 1px">Calcular Costo</button>
+                <button type="reset" style="height: 60px; width: 200px; color: #558855; font-size: 18px; font-weight: bold; border-radius: 10px; border-width: 1px">Borrar Costos</button>
+            </div>
+        </form>
+    </body>
+</html>

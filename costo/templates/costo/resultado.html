@@ -1,0 +1,31 @@
+
+{% load static %}
+
+<html lang="es">
+    <head>
+        <title>Costo Medialunas de Manteca</title>
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}">
+    </head>
+
+    <body>
+
+        <br>
+        <h1 align="center" style="color: #558855">Costo Medialunas</h1>
+
+        <table align="center" style="color: #558855; font-size: 18px;">
+            <tr>
+                <td><li>Costo 24 Medialunas:</li></td>
+                <td>&nbsp;${{ total_24 }}</td>
+            </tr>
+            <tr>
+                <td><li>Costo 1 Medialuna:</li></td>
+                <td>&nbsp;${{ total_1 }}</td>
+            </tr>
+        </table>
+
+        <form action="/" method="GET" style="text-align: center; padding-top: 25px">
+            <button type="submit" style="height: 60px; width: 200px; color: #558855; font-size: 18px; font-weight: bold; border-radius: 10px; border-width: 1px">Volver</button>
+        </form>
+
+    </body>
+</html>
